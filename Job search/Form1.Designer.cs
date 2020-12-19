@@ -31,13 +31,13 @@ namespace Job_search
         {
             this.AbortButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
-            this.ListTitles = new System.Windows.Forms.ListBox();
             this.VacancyTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.NumericStart = new System.Windows.Forms.NumericUpDown();
             this.NumericEnd = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.NumericStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@ namespace Job_search
             this.AbortButton.Name = "AbortButton";
             this.AbortButton.Size = new System.Drawing.Size(120, 23);
             this.AbortButton.TabIndex = 9;
-            this.AbortButton.Text = "Abort";
+            this.AbortButton.Text = "Прервать";
             this.AbortButton.UseVisualStyleBackColor = true;
             this.AbortButton.Click += new System.EventHandler(this.AbortButton_Click);
             // 
@@ -60,21 +60,9 @@ namespace Job_search
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(120, 23);
             this.StartButton.TabIndex = 8;
-            this.StartButton.Text = "Start";
+            this.StartButton.Text = "Старт";
             this.StartButton.UseVisualStyleBackColor = true;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
-            // 
-            // ListTitles
-            // 
-            this.ListTitles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListTitles.FormattingEnabled = true;
-            this.ListTitles.Location = new System.Drawing.Point(12, 12);
-            this.ListTitles.Name = "ListTitles";
-            this.ListTitles.Size = new System.Drawing.Size(359, 420);
-            this.ListTitles.TabIndex = 7;
-            this.ListTitles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ListTitles_KeyDown);
             // 
             // VacancyTB
             // 
@@ -141,11 +129,23 @@ namespace Job_search
             this.label3.TabIndex = 14;
             this.label3.Text = "Последняя страница";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.Location = new System.Drawing.Point(12, 13);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(383, 425);
+            this.richTextBox1.TabIndex = 16;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 450);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.NumericEnd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.NumericStart);
@@ -154,9 +154,8 @@ namespace Job_search
             this.Controls.Add(this.VacancyTB);
             this.Controls.Add(this.AbortButton);
             this.Controls.Add(this.StartButton);
-            this.Controls.Add(this.ListTitles);
             this.Name = "Form1";
-            this.Text = "Детоубийца";
+            this.Text = "Поиск Вакансий";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.NumericStart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).EndInit();
@@ -169,13 +168,13 @@ namespace Job_search
 
         private System.Windows.Forms.Button AbortButton;
         private System.Windows.Forms.Button StartButton;
-        private System.Windows.Forms.ListBox ListTitles;
         private System.Windows.Forms.TextBox VacancyTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown NumericStart;
         private System.Windows.Forms.NumericUpDown NumericEnd;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

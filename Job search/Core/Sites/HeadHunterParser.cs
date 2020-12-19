@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AngleSharp.Dom;
 using AngleSharp.Html.Dom;
 using Job_search.Core;
 
@@ -12,38 +13,56 @@ namespace Job_search.Sites
     {
         public string[] Parse(IHtmlDocument document)
         {
+            int counter = 0;
+            int counterSalary = 0;
             var list = new List<string>();
-            // bloko-link HH-LinkModifier
-            // bloko-link HH-LinkModifier HH-VacancySidebarTrigger-Link HH-VacancySidebarAnalytics-Link
-            // bloko-link HH-LinkModifier HH-VacancySidebarTrigger-Link HH-VacancySidebarAnalytics-Link
+            var salaryList = new List<string>();
+            var companyList = new List<string>();
+            var cityList = new List<string>();
 
             var vacancy = document.QuerySelectorAll("a").Where(item => item.ClassName != null && (item.ClassName.Contains("bloko-link HH-LinkModifier") 
                             || item.ClassName.Contains("bloko-link HH-LinkModifier HH-VacancySidebarTrigger-Link HH-VacancySidebarAnalytics-Link")));
 
-            //var vacancyLink = vacancy.OfType<IHtmlAnchorElement>().Select(m => m.Href);
             // bloko-section-header-3 bloko-section-header-3_lite
+            // div vacancy-serp-item__sidebar
 
-            var salary = document.QuerySelectorAll("span").Where(item => item.ClassName != null && item.ClassName.Contains("bloko-section-header-3 bloko-section-header-3_lite"));
-
-            //bloko-link bloko-link_secondary
+            var salary = document.QuerySelectorAll("div").Where(item => item.ClassName != null && item.ClassName.Contains("vacancy-serp-item__sidebar"));
 
             var company = document.QuerySelectorAll("a").Where(item => item.ClassName != null && item.ClassName.Contains("bloko-link bloko-link_secondary"));
 
-            // vacancy-serp-item__meta-info
-
             var city = document.QuerySelectorAll("span").Where(item => item.ClassName != null && item.ClassName.Contains("vacancy-serp-item__meta-info"));
+
+            foreach (var item in salary)
+            {
+                if (item.TextContent == "")
+                {
+                    salaryList.Add("Не указана");
+                }
+                else
+                {
+                    salaryList.Add(item.TextContent);
+                }
+            }
+
+            foreach (var item in company)
+            {
+                companyList.Add(item.TextContent);
+            }
+
+            foreach (var item in city)
+            {
+                cityList.Add(item.TextContent);
+            }
 
             foreach (var item in vacancy)
             {
-                list.Add($"Вакансия: {item.TextContent} Ссылка: {item.GetAttribute("href")}");
+                counterSalary += 1;
+                counter++;
+                list.Add($"\n{counter} Вакансия: {item.TextContent} \nЗарплата: {salaryList[counterSalary]} \nКомпания: {companyList[counter - 1]} \nГород: {cityList[counter - 1]} \nСсылка: {item.GetAttribute("href")}");
+
+                //list.Add($"\n{counter} \n{salaryList[counterSalary]}");
 
             }
-
-            //foreach (var item in salary)
-            //{
-            //    list.Add("Зарплата " + item.TextContent);
-
-            //}
 
             return list.ToArray();
         }

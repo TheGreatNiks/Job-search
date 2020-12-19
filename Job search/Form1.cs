@@ -34,7 +34,8 @@ namespace Job_search
         private void Parser_OnNewData(object arg1, string[] arg2)
         {
             //ListTitles.Items.Clear();
-            ListTitles.Items.AddRange(arg2);
+            //ListTitles.Items.AddRange(arg2);
+            richTextBox1.Text = string.Join(" ", arg2);
         }
 
         private void AbortButton_Click(object sender, EventArgs e)
@@ -61,12 +62,5 @@ namespace Job_search
             //}
         }
 
-        private void ListTitles_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Control || e.KeyCode == Keys.C)
-            {
-                Clipboard.SetText((string)ListTitles.SelectedItem);
-            }
-        }
     }
 }
