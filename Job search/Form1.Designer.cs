@@ -38,6 +38,7 @@ namespace Job_search
             this.NumericEnd = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.ClearButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).BeginInit();
             this.SuspendLayout();
@@ -140,11 +141,23 @@ namespace Job_search
             this.richTextBox1.TabIndex = 16;
             this.richTextBox1.Text = "";
             // 
+            // ClearButton
+            // 
+            this.ClearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClearButton.Location = new System.Drawing.Point(407, 271);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(117, 23);
+            this.ClearButton.TabIndex = 17;
+            this.ClearButton.Text = "Очистить";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 450);
+            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.NumericEnd);
             this.Controls.Add(this.label3);
@@ -175,6 +188,7 @@ namespace Job_search
         private System.Windows.Forms.NumericUpDown NumericEnd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button ClearButton;
     }
 }
 

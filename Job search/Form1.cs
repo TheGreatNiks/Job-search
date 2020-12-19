@@ -62,5 +62,9 @@ namespace Job_search
             //}
         }
 
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
     }
 }
