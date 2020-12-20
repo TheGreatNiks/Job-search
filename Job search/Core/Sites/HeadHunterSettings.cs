@@ -16,7 +16,7 @@ namespace Job_search.Sites
             Vacancy = vacancy;
         }
         public string BaseUrl { get; set; } = $"https://perm.hh.ru/search/vacancy?clusters=true&no_magic=true&enable_snippets=true&salary=&st=searchVacancy&text=";
-        public string Page { get; set; } = "page{CurrentId}";
+        public string Page { get; set; } = "&page={CurrentId}";
         public string Vacancy { get; set; }
         public int StartPoint { get; set; }
         public int EndPoint { get; set; }

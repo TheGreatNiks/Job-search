@@ -16,7 +16,7 @@ namespace Job_search.Core
         public HtmlLoader(IParserSettings settings)
         {
             client = new HttpClient();
-            url = $"{settings.BaseUrl}{settings.Vacancy}";
+            url = $"{settings.BaseUrl}{settings.Vacancy}{settings.Page}";
         }
 
         public async Task<string> GetSourceByPageId(int id)

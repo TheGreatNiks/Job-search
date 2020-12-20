@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Job_search.Core;
 using Job_search.Sites;
@@ -35,7 +28,8 @@ namespace Job_search
         {
             //ListTitles.Items.Clear();
             //ListTitles.Items.AddRange(arg2);
-            richTextBox1.Text = string.Join(" ", arg2);
+            string text = string.Join(" ", arg2);
+            richTextBox1.AppendText(text);
         }
 
         private void AbortButton_Click(object sender, EventArgs e)
@@ -55,11 +49,7 @@ namespace Job_search
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            //if (e.KeyCode == Keys.Control || e.KeyCode == Keys.C)
-            //{
-            //    Clipboard.SetText("Илья Молодец", TextDataFormat.UnicodeText);
-            //    //Clipboard.SetText((string)ListTitles.SelectedItem);
-            //}
+
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
