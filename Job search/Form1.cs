@@ -21,13 +21,11 @@ namespace Job_search
 
         private void Parser_OnCompleted(object obj)
         {
-            MessageBox.Show("All work done!");
+            MessageBox.Show("Парсинг завершен успешно!");
         }
 
         private void Parser_OnNewData(object arg1, string[] arg2)
         {
-            //ListTitles.Items.Clear();
-            //ListTitles.Items.AddRange(arg2);
             string text = string.Join(" ", arg2);
             richTextBox1.AppendText(text);
         }
