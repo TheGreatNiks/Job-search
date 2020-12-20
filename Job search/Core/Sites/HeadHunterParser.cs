@@ -24,9 +24,6 @@ namespace Job_search.Sites
             var vacancy = document.QuerySelectorAll("a").Where(item => item.ClassName != null && (item.ClassName.Contains("bloko-link HH-LinkModifier") 
                             || item.ClassName.Contains("bloko-link HH-LinkModifier HH-VacancySidebarTrigger-Link HH-VacancySidebarAnalytics-Link")));
 
-            // bloko-section-header-3 bloko-section-header-3_lite
-            // div vacancy-serp-item__sidebar
-
             var salary = document.QuerySelectorAll("div").Where(item => item.ClassName != null && item.ClassName.Contains("vacancy-serp-item__sidebar"));
 
             var company = document.QuerySelectorAll("a").Where(item => item.ClassName != null && item.ClassName.Contains("bloko-link bloko-link_secondary"));
@@ -63,8 +60,6 @@ namespace Job_search.Sites
                     counter++;
                     list.Add($"\n{counter} Вакансия: {item.TextContent} \nЗарплата: {salaryList[counterSalary]} \nКомпания: {companyList[counter - 1]} \nГород: {cityList[counter - 1]} \nСсылка: {item.GetAttribute("href")}");
                     counterSalary += 2;
-
-                    //list.Add($"\n{counter} \n{salaryList[counterSalary]}");
 
                 }
             }
