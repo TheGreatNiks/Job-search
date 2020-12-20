@@ -144,9 +144,9 @@ namespace Job_search
             // ClearButton
             // 
             this.ClearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClearButton.Location = new System.Drawing.Point(407, 271);
+            this.ClearButton.Location = new System.Drawing.Point(404, 271);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(117, 23);
+            this.ClearButton.Size = new System.Drawing.Size(120, 23);
             this.ClearButton.TabIndex = 17;
             this.ClearButton.Text = "Очистить";
             this.ClearButton.UseVisualStyleBackColor = true;

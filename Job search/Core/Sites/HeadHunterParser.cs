@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using AngleSharp.Dom;
 using AngleSharp.Html.Dom;
 using Job_search.Core;
@@ -54,15 +55,24 @@ namespace Job_search.Sites
                 cityList.Add(item.TextContent);
             }
 
-            foreach (var item in vacancy)
+            try
             {
-                counterSalary += 1;
-                counter++;
-                list.Add($"\n{counter} Вакансия: {item.TextContent} \nЗарплата: {salaryList[counterSalary]} \nКомпания: {companyList[counter - 1]} \nГород: {cityList[counter - 1]} \nСсылка: {item.GetAttribute("href")}");
+                foreach (var item in vacancy)
+                {
+                    
+                    counter++;
+                    list.Add($"\n{counter} Вакансия: {item.TextContent} \nЗарплата: {salaryList[counterSalary]} \nКомпания: {companyList[counter - 1]} \nГород: {cityList[counter - 1]} \nСсылка: {item.GetAttribute("href")}");
+                    counterSalary += 2;
 
-                //list.Add($"\n{counter} \n{salaryList[counterSalary]}");
+                    //list.Add($"\n{counter} \n{salaryList[counterSalary]}");
 
+                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
 
             return list.ToArray();
         }

@@ -33,20 +33,5 @@ namespace Job_search.Core
 
             return source;
         }
-
-        //public async Task<string> GetSource()
-        //{
-
-        //    var currentUrl = url;
-        //    var response = await client.GetAsync(currentUrl);
-        //    string source = null;
-
-        //    if (response != null && response.StatusCode == HttpStatusCode.OK)
-        //    {
-        //        source = await response.Content.ReadAsStringAsync();
-        //    }
-
-        //    return source;
-        //}
     }
 }
